@@ -1,0 +1,23 @@
+{
+  "name": "galactic-age-calculator",
+  "version": "1.0.0",
+  "description": "epicodus js week 1 project, calculates age based on planet year",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilyjimenez/Super-Galactic-Age-Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilyjimenez/Super-Galactic-Age-Calculator/issues"
+  },
+  "homepage": "https://github.com/emilyjimenez/Super-Galactic-Age-Calculator#readme",
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "gulp": "^3.9.1"
+  }
+}
