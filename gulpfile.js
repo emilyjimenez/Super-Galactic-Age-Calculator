@@ -20,7 +20,7 @@ var lib = require('bower-files')({
 var browserSync = require('browser-sync').create();
 var babelify = require('babelify');
 
-var isProductionBuild = utilities.env.production;
+var buildProduction = utilities.env.production;
 
 gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])
@@ -35,10 +35,13 @@ gulp.task('concatInterface', function() {
 });
 
 gulp.task('jsBrowserify', ['concatInterface'], function() {
-  return browserify({ entries: ['./tmp/allConcat.js'] })
-  .bundle()
-  .pipe(source('app.js'))
-  .pipe(gulp.dest('./build/js'));
+  return browserify({ entries: ['./tmp/allConcat.js']})
+    .transform(babelify.configure({
+      presets: ['es2015']
+    }))
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./build/js'))
 });
 
 gulp.task('minifyScripts', ['jsBrowserify'], function() {
@@ -105,14 +108,4 @@ gulp.task('cssBuild', function() {
   gulp.src(['css/*.css'])
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./build/css'))
-});
-
-gulp.task('jsBrowserify', ['concatInterface'], function() {
-  return browserify({ entries: ['./tmp/allConcat.js']})
-    .transform(babelify.configure({
-      presets: ['es2015']
-    }))
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(gulp.dest('./build/js'))
 });
