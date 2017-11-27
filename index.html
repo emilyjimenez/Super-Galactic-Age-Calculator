@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="build/css/styles.css">
+  <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
     <script src="build/js/vendor.min.js"></script>
     <script src="build/js/app.js"></script>
     <title>Age Calculator</title>
@@ -12,8 +12,14 @@
       <div class="jumbotron">
         <h1>Super Galactic Age Calculator</h1>
       </div>
-      <h3>Well look at the time! </h3>
-      <h3 id="time"></h3>
+      <form id="input-age">
+        <div class="form-group">
+         <label for="input-age">Birthdate:</label>
+         <input id="date" type="datetime-local">
+          <button type="submit" name="button" class="btn btn-info">Submit</button>
+        </div>
+      </form>
+      <div id="birthdate">
     </div>
   </body>
 </html>

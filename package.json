@@ -4,7 +4,7 @@
   "description": "epicodus js week 1 project, calculates age based on planet year",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "karma start karma.config.js"
+    "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
