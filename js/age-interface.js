@@ -1,10 +1,13 @@
-import { Age } from "./../js/age.js";
+import { Birthdate } from "./../js/age.js";
 
 $(document).ready(function() {
   $("#input-age").submit(function(event) {
     event.preventDefault();
-     var age = $("input#date").val();
-     var fullAge = age + ":00-8:00";
-     $("#birthdate").text(fullAge);
+     let birthDateInput = $("#date").val();
+     let newBirthdate = new Birthdate(birthDateInput);
+     let fullAge = newBirthdate.getAge();
+     let ageInYears = newBirthdate.ageYears;
+     $(".results").show();
+     $("#birthdate").text(ageInYears + " years old");
    });
 });

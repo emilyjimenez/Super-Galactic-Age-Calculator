@@ -19,7 +19,7 @@ calcSeconds() {
 }
 
 calcYears() {
-  return this.calcSeconds()/(365*24*60*60);
+  return Math.floor(this.calcSeconds()/(365*24*60*60));
 }
 
 calcMercYrs(){

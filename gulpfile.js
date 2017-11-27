@@ -76,7 +76,6 @@ gulp.task('build', ['clean'], function(){
     gulp.start('jsBrowserify');
   }
     gulp.start('bower');
-    gulp.start('cssBuild');
 });
 
 gulp.task('serve', function() {
@@ -106,6 +105,6 @@ gulp.task('htmlBuild', function(){
 
 gulp.task('cssBuild', function() {
   gulp.src(['css/*.css'])
-  .pipe(concat('vendor.css'))
+  .pipe(concat('styles.css'))
   .pipe(gulp.dest('./build/css'))
 });
