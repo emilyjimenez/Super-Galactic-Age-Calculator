@@ -1,20 +1,24 @@
-import { Age, Birthdate } from './../js/age.js';
+import { Birthdate } from './../js/age.js';
 
-describe('Age', function(){
-  let thisAge;
-
-  it('it will make an age object and take in the age property', function(){
-    thisAge = new Age(17);
-    expect(thisAge.age).toEqual(17);
-  });
-
-  it('it will make the age object and take in the age in seconds property', function() {
-    thisAge = new Age(17);
-    expect(thisAge.seconds).toEqual(536112000);
+describe('Birthdate getAge', function() {
+  let bdInput;
+  let testBD;
+  it('it will get the age of user by converting birthdate into seconds and comparing it to the time now in seconds', function(){
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    thisbdDate.getAge();
+    expect(testBD.ageSeconds).toEqual(914978012);
+    expect(testBD.ageYears).toEqual(29);
   });
 });
 
-describe('Birthdate', function() {
-  let thisdob;
-  let thisdobDate;
+describe('Birthdate calcSeconds'){
+  let bdInput;
+  let testBD;
+  it('it will calculate age seconds on its own to pass along to other methods', function(){
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(thisbdInput);
+    testBD.calcSeconds();
+    expect(testBD.ageSeconds).toEqual(914978012);
+  });
 });
