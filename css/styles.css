@@ -1,3 +1,26 @@
+.jumbotron {
+  background-image: url("../img/sailormoon.gif");
+  background-repeat: repeat;
+  color: white;
+}
+
 .results {
   display: none;
+}
+
+img:hover {
+  box-shadow: 10px 10px 5px grey;
+}
+
+.row {
+  margin-top: 5px;
+}
+
+#mercury-answer, #venus-answer, #mars-answer, #jupiter-answer {
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom:  5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }

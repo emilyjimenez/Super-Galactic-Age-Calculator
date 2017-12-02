@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
   <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
-   <link href="build/css/styles.css" rel="stylesheet" type="text/css">
+   <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <script src="build/js/vendor.min.js"></script>
     <script src="build/js/app.js"></script>
     <title>Age Calculator</title>
@@ -15,18 +15,58 @@
       </div>
       <form id="input-age">
         <div class="form-group">
+          <h4>Calculate your age and life expectancy by inputting you birthdate below.</h4>
          <label for="input-age">Birthdate:</label>
          <input id="date" type="datetime-local">
           <button type="submit" name="button" class="btn btn-info">Submit</button>
+          <p><i>*Please fill in full birthdate, if unsure of actual time, just guess!</i></p>
+            <div class="alert alert-info">
+              <p><strong>Heads up!</strong> Calculator determines life expectancy based on IQ/life expectancy correlation by <a href="https://www.scientificamerican.com/article/research-confirms-a-link-between-intelligence-and-life-expectancy/">Scientific American</a>. The life expectancy calculator assumes the the user is from the US and bases IQ on US avg (98) and life expectancy to be 79.3 years based on <a href="https://en.wikipedia.org/wiki/List_of_countries_by_life_expectancy#List_by_the_World_Health_Organization_(2015)">WHO 2015 results</a>. For this calculator, if your IQ is high, your life expectancy is +10 years above the average, and if it's low, you life expectancy is -10 years below the average.</p>
+            </div>
         </div>
       </form>
       <div class="results">
-        <p class="lead">Your age in earth years:</p>
-          <h4>
-            <div id="birthdate">
-            </div>
-          </h4>
-        <p>What would your age be on other planets? Click on the planets below to find out.</p>
+        <h4>🌎 Your age in earth years:</h4>
+            <p class="lead" id="birthdate">
+            </p>
+            <p class="lead" id="life-expect-high">
+            </p>
+            <p class="lead" id="life-expect-low">
+            </p>
+          <h4>♊️ ♉️ ♈️ ♐️ Your age in different planet years:</h4>
+        <p class="lead">What would your age and life be like be on other planets? Click on the sailor senshi that correlate to their respective planet to find out.</p>
+        <div class="row">
+          <div class="col-md-3">
+            <img src="../img/mercury.jpg" id="mercury">
+            <ul class="list-unstyled">
+              <div id="mercury-answer">
+              </div>
+            </ul>
+          </div>
+          <div class="col-md-3" id="venus">
+            <img src="../img/venus.jpg">
+            <ul class="list-unstyled">
+              <div id="venus-answer">
+              </div>
+            </ul>
+          </div>
+          <div class="col-md-3" id="mars">
+            <img src="../img/mars.jpg">
+            <ul class="list-unstyled">
+              <div id="mars-answer">
+              </div>
+            </ul>
+          </div>
+          <div class="col-md-3" id="jupiter">
+            <img src="../img/jupiter.jpg">
+            <ul class="list-unstyled">
+              <div id="jupiter-answer">
+              </div>
+            </ul>
+          </div>
+        </div>
+        <button type="button" name="reload" id="reload" class="btn btn-info">Reload Calculator</button>
       </div>
+    </div>
   </body>
 </html>
