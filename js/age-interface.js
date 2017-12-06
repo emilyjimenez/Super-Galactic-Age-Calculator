@@ -8,13 +8,25 @@ $(document).ready(function() {
     let fullAge = newBirthdate.getAge();
     let ageInYears = newBirthdate.ageYears;
     let ageInSeconds = newBirthdate.ageSeconds;
-    let lifeRemainingHigh = newBirthdate.lifeRemainingHigh;
-    let lifeRemainingLow = newBirthdate.lifeRemainingLow;
+    let lifeRemaining = newBirthdate.lifeRemaining;
+
+    let selectedIQ = $("input:radio[name=iq]:checked").val();
+
+    if (selectedIQ === "high") {
+      newBirthdate.isSmart();
+    } else if (selectedIQ === "low") {
+      newBirthdate.isDumb();
+    } else {
+      return lifeExpecting;
+    };
+
+    console.log(newBirthdate.ageYears);
+    console.log(selectedIQ);
+
     $("#input-age").slideUp();
     $(".results").slideDown();
     $("#birthdate").text(ageInYears + " years old, or " + ageInSeconds + " seconds old.");
-    $("#life-expect-high").text("If your IQ is high, you have " + lifeRemainingHigh + " years remaining on Earth");
-    $("#life-expect-low").text("If your IQ is low, you have " + lifeRemainingLow + " years remaining on Earth");
+    $("#life-expect").text("If your IQ is BLANK, you have " + lifeRemaining + " years remaining on Earth");
 
     $("#mercury").click(function(){
       let mercuryYrs = newBirthdate.calcMercYrs();

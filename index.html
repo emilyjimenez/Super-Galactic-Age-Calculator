@@ -13,25 +13,36 @@
       <div class="jumbotron">
         <h1>Super Galactic Age Calculator</h1>
       </div>
+
       <form id="input-age">
         <div class="form-group">
           <h4>Calculate your age and life expectancy by inputting you birthdate below.</h4>
          <label for="input-age">Birthdate:</label>
          <input id="date" type="datetime-local">
+       </div>
+       <p><i>*Please fill in full birthdate, if unsure of actual time, just guess!</i></p>
+       <label>Do you have a high or low IQ?</label>
+         <div class="radio">
+           <label><input type="radio" name="iq" value="high" checked>High IQ (Above 110)</label>
+         </div>
+         <div class="radio">
+           <label><input type="radio" name="iq" value="medium">Medium IQ (Between 89-109)</label>
+         </div>
+         <div class="radio">
+           <label><input type="radio" name="iq" value="low">Low IQ (Below 90)</label>
+         </div>
           <button type="submit" name="button" class="btn btn-info">Submit</button>
-          <p><i>*Please fill in full birthdate, if unsure of actual time, just guess!</i></p>
+          <br></br>
             <div class="alert alert-info">
               <p><strong>Heads up!</strong> Calculator determines life expectancy based on IQ/life expectancy correlation by <a href="https://www.scientificamerican.com/article/research-confirms-a-link-between-intelligence-and-life-expectancy/">Scientific American</a>. The life expectancy calculator assumes the the user is from the US and bases IQ on US avg (98) and life expectancy to be 79.3 years based on <a href="https://en.wikipedia.org/wiki/List_of_countries_by_life_expectancy#List_by_the_World_Health_Organization_(2015)">WHO 2015 results</a>. For this calculator, if your IQ is high, your life expectancy is +10 years above the average, and if it's low, you life expectancy is -10 years below the average.</p>
             </div>
-        </div>
       </form>
+
       <div class="results">
         <h4>🌎 Your age in earth years:</h4>
             <p class="lead" id="birthdate">
             </p>
-            <p class="lead" id="life-expect-high">
-            </p>
-            <p class="lead" id="life-expect-low">
+            <p class="lead" id="life-expect">
             </p>
           <h4>♊️ ♉️ ♈️ ♐️ Your age in different planet years:</h4>
         <p class="lead">What would your age and life be like be on other planets? Click on the sailor senshi that correlate to their respective planet to find out.</p>
