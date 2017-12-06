@@ -2,8 +2,8 @@ export class Birthdate {
   constructor(userInput) {
     this.bdInput = userInput;
     this.bdDate = new Date(userInput);
-    this.ageSeconds = 0;
-    this.ageYears = 0;
+    this.ageSeconds;
+    this.ageYears;
     //US life expectancy average is 79.3, high and low will be 10 year difference
     this.lifeExpect = 79.3;
     this.lifeRemaining;

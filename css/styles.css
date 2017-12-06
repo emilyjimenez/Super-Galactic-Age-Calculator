@@ -18,6 +18,7 @@ img:hover {
 
 #mercury-answer, #venus-answer, #mars-answer, #jupiter-answer {
   letter-spacing: 2px;
+  font-weight: bold;
   text-align: center;
   margin-top: 5px;
   margin-bottom:  5px;
