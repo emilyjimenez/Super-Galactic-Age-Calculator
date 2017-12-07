@@ -8,7 +8,7 @@
 
 ## Description
 
-_Web app that calculates your age and life expectancy based on the birthdate the user enters. Will also calculate_
+_Web app that calculates your age and life expectancy based on the birthdate the user enters. Will also calculate age and expectancy based on different planets._
 
 
 
