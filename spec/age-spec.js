@@ -80,6 +80,40 @@ describe('Birthdate calculate planet years methods', function() {
   });
 });
 
+describe('Birthdate calculate planet life expectancy methods', function() {
+  it('it will calculate life remaining (using average life expectancy) in mercury years(calcMercYrs)', function(){
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    let resultMercsYears = testBD.calcMercYrs();
+    let mercLifeRemaining = testBD.mercLife();
+    expect(mercLifeRemaining).toEqual(210);
+  });
+
+  it('it will calculate life remaining (using average life expectancy) in venus years(calcVenusYrs)', function(){
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    let resultVenussYears = testBD.calcVenusYrs();
+    let venusLifeRemaining = testBD.venusLife();
+    expect(venusLifeRemaining).toEqual(81);
+  });
+
+  it('it will calculate life remaining (using average life expectancy) in mars years(calcMarsYrs)', function(){
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    let resultMarssYears = testBD.calcMarsYrs();
+    let marsLifeRemaining = testBD.marsLife();
+    expect(marsLifeRemaining).toEqual(27);
+  });
+
+  it('it will calculate life remaining (using average life expectancy) in jupiter years(calcJupYrs)', function(){
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    let resultJupsYears = testBD.calcJupYrs();
+    let jupiterLifeRemaining = testBD.jupiterLife();
+    expect(jupiterLifeRemaining).toEqual(4);
+  });
+});
+
 describe('Birthdate calculate IQ', function() {
   it('it will calculate the IQ of a person and change life expectancy useing IsSmart method', function() {
     let bdInput = "Thu Nov 29 1988 00:00:00";
@@ -97,5 +131,5 @@ describe('Birthdate calculate IQ', function() {
     let resultYears = testBD.calcYears();
     let lifeExpectDumb = testBD.isDumb();
     expect(lifeExpectDumb).toEqual(69.3);
-});
+  });
 });
