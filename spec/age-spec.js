@@ -9,6 +9,7 @@ describe('Birthdate constructor', function() {
     expect(testBD.bdDate).not.toEqual(undefined);
     expect(testBD.ageSeconds).not.toEqual(undefined);
     expect(testBD.ageYears).not.toEqual(undefined);
+    expect(testBD.lifeExpect).not.toEqual(undefined);
   });
 });
 
@@ -41,20 +42,17 @@ describe('Birthdate calcYears', function() {
   });
 });
 
-describe('Birthdate calcMercYrs', function() {
-  it('it will calculate age in mercury ears, .24 years of an earth year', function(){
+describe('Birthdate calculate planet years methods', function() {
+  it('it will calculate age in mercury ears(calcMercYrs), .24 years of an earth year', function(){
     let bdInput = "Thu Nov 29 1988 00:00:00";
     let testBD = new Birthdate(bdInput);
     let resultSeconds = testBD.calcSeconds();
     let resultYears = testBD.calcYears();
     let resultMercYears = testBD.calcMercYrs();
-    console.log("mercYrs: " + resultMercYears);
     expect(resultMercYears).toEqual(120);
   });
-});
 
-describe('Birthdate calcVenusYrs', function() {
-  it('it will calculate age in venus years, .62 years of an earth year', function(){
+  it('it will calculate age in venus years(calcVenusYrs), .62 years of an earth year', function(){
     let bdInput = "Thu Nov 29 1988 00:00:00";
     let testBD = new Birthdate(bdInput);
     let resultSeconds = testBD.calcSeconds();
@@ -62,10 +60,8 @@ describe('Birthdate calcVenusYrs', function() {
     let resultVenusYears = testBD.calcVenusYrs();
     expect(resultVenusYears).toEqual(46);
   });
-});
 
-describe('Birthdate calcMarsYrs', function() {
-  it('it will calculate age in mars years, 1.88 years of an earth year', function(){
+  it('it will calculate age in mars years(calcMarsYrs), 1.88 years of an earth year', function(){
     let bdInput = "Thu Nov 29 1988 00:00:00";
     let testBD = new Birthdate(bdInput);
     let resultSeconds = testBD.calcSeconds();
@@ -73,10 +69,8 @@ describe('Birthdate calcMarsYrs', function() {
     let resultMarsYears = testBD.calcMarsYrs();
     expect(resultMarsYears).toEqual(15);
   });
-});
 
-describe('Birthdate calcJupiterYrs', function() {
-  it('it will calculate age in jupiter years, 11.86 years of an earth year', function(){
+  it('it will calculate age in jupiter years(calcJupYrs), 11.86 years of an earth year', function(){
     let bdInput = "Thu Nov 29 1988 00:00:00";
     let testBD = new Birthdate(bdInput);
     let resultSeconds = testBD.calcSeconds();
@@ -84,4 +78,24 @@ describe('Birthdate calcJupiterYrs', function() {
     let resultJupiterYears = testBD.calcJupYrs();
     expect(resultJupiterYears).toEqual(2);
   });
+});
+
+describe('Birthdate calculate IQ', function() {
+  it('it will calculate the IQ of a person and change life expectancy useing IsSmart method', function() {
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    let resultSeconds = testBD.calcSeconds();
+    let resultYears = testBD.calcYears();
+    let lifeExpectSmart = testBD.isSmart();
+    expect(lifeExpectSmart).toEqual(89.3);
+  });
+
+  it('it will calculate the IQ of a person and change life expectancy useing IsDumb method', function() {
+    let bdInput = "Thu Nov 29 1988 00:00:00";
+    let testBD = new Birthdate(bdInput);
+    let resultSeconds = testBD.calcSeconds();
+    let resultYears = testBD.calcYears();
+    let lifeExpectDumb = testBD.isDumb();
+    expect(lifeExpectDumb).toEqual(69.3);
+});
 });

@@ -7,27 +7,14 @@ $(document).ready(function() {
     let newBirthdate = new Birthdate(birthDateInput);
     let selectedIQ = $("input:radio[name=iq]:checked").val();
     if (selectedIQ === "high") {
-      lifeExpecting = newBirthdate.isSmart();
+      newBirthdate.lifeExpect = newBirthdate.isSmart();
     } else if (selectedIQ === "low") {
-      lifeExpecting = newBirthdate.isDumb();
-    } else {
-      lifeExpecting = newBirthdate.lifeExpect;
+      newBirthdate.lifeExpect = newBirthdate.isDumb();
     }
-
-
     let fullAge = newBirthdate.getAge();
     let ageInYears = newBirthdate.ageYears;
     let ageInSeconds = newBirthdate.ageSeconds;
-
-
-
-
-    let lifeExpecting = newBirthdate.lifeExpect;
-
-
-
     let lifeRemaining = newBirthdate.lifeRemaining;
-
 
     $("#input-age").slideUp();
     $(".results").slideDown();
